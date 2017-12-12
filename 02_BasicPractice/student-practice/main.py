@@ -6,7 +6,9 @@ import student.student_utilities.score_table as score_table
 if __name__ == "__main__":
     mymap = GradeMap.instance()
 
-    # some codes here
+    dict_list = [(14, "중1"), (15, "중2"), (16, "중3"), (17, "고1"), (18, "고2"), (19, "고3")]
+    for item in dict_list:
+        mymap.setitem(item[0], item[1])
 
     nayeon = Student(19, "나연", 88, 70, 67)
     dahyun = Student(17, "다현", 94, 94, 90)
