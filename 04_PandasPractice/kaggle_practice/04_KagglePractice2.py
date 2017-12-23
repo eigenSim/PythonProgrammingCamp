@@ -13,7 +13,8 @@ chipo = pd.read_csv(url, sep = '\t')
 
 # 한 주문에 10달러 이상 사용한 주문의 id들 출력하기
 chipo['item_price'] = chipo['item_price'].apply(lambda x: float(x[1:]))
-chipo.groupby('order_id').sum()[chipo.item_price >= 10].index.values
+chipo_group = chipo.groupby('order_id').sum()
+chipo.groupby('order_id').sum()[chipo_group.item_price >= 10].index.values
 
 
 # 각 아이템의 가격 구하기
